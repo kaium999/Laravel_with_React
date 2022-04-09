@@ -13,7 +13,7 @@ import Update from './Update';
             <Route path='/login' element={<LogIn />}></Route>
             <Route path='/adddata' element={<Adddata />}></Route>
             <Route path='/showdata' element={<ShowData />}></Route>
-            <Route path='/update' element={<Update />}></Route>
+            <Route path='/update/:id' element={<Update />}></Route>
         </Routes>
     </div>
   )

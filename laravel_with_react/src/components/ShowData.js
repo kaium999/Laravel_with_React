@@ -1,4 +1,5 @@
 //import React from 'react'
+import{ Link} from 'react-router-dom';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
  function ShowData() {
@@ -51,6 +52,7 @@ import React, { useEffect, useState } from 'react'
                     <td>{mydata.uname}</td>
                     <td>{mydata.uemail}</td>
                     <td>{mydata.upassword}</td>
+                    <td><Link to={"/update/"+mydata.id}>Edit</Link></td>
                     <td><button onClick={()=>deleteUser(mydata.id)}>Delete</button></td>
                 </tr>
               })
