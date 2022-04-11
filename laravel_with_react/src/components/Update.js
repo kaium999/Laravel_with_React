@@ -7,9 +7,9 @@ import {useParams} from 'react-router-dom';
     const params=useParams();
     const userid=params.id;
     const[userget,Setuser]=useState('[]');    
-    const[fname,setname]=useState(''); 
-    const[uEmail,setemail]=useState('');   
-    const[uPassword,setPassword]=useState(''); 
+    const[fname,setname]=useState(""); 
+    const[uEmail,setemail]=useState("");   
+    const[uPassword,setPassword]=useState(""); 
     
     useEffect(()=>{
         fetchUser();
@@ -53,17 +53,18 @@ import {useParams} from 'react-router-dom';
         }
         //console.log("Form is Submitted");
         console.log(object);
+        console.log(userid);
         e.preventDefault();
         axios.put(`http://127.0.0.1:8000/api/update/${userid}`,object)
         .then(response=>{
             console.log(response.data)
-        })
+        }).catch(err=>console.error(err))
        
     }
   return (
     <div>
         <h1>This is Update Page</h1>
-        <form action='' onSubmit={submit} >
+        <form action='' onSubmit={submit} method="put" >
         <div>
             <label>Enter Your Name</label>
             <input type="text" name='name' onChange={onName} value={fname}></input>

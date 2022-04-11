@@ -1,7 +1,13 @@
 //import React from 'react'
 import{ Link} from 'react-router-dom';
+
+
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+//import Navbar from './Navbar';
+
+
+
  function ShowData() {
   const [userget,Setuser]=useState([]);
   useEffect(()=>{
@@ -33,6 +39,7 @@ import React, { useEffect, useState } from 'react'
 }
   return (
     <div>
+ 
         <h1>This is Show Data Page</h1>
         <div>
         <table className="table table-bordered">
